@@ -1,0 +1,54 @@
+{% set name = "Viscid" %}
+{% set version = "0.99.6" %}
+{% set file_ext = "tar.gz" %}
+
+package:
+  name: '{{ name|lower }}'
+  version: '{{ version }}'
+
+source:
+  fn: '{{ name }}-{{ version }}.{{ file_ext }}'
+  url: https://github.com/viscid-hub/Viscid/archive/{{ version }}.{{ file_ext }}
+
+build:
+  number: 0
+  script: python setup.py install
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - python
+    - numpy >=1.9
+  run:
+    - python
+    - {{ pin_compatible('numpy') }}
+    - ipython
+    - matplotlib >=1.4
+    - pyqt
+    - scipy
+    - numexpr
+    - h5py
+
+test:
+  imports:
+    - viscid
+    - viscid.calculator
+    - viscid.compat
+    - viscid.compat.futures
+    - viscid.cython
+    - viscid.plot
+    - viscid.readers
+
+about:
+  home: https://github.com/viscid-hub/Viscid
+  license: MIT License
+  license_family: MIT
+  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
+  summary: Visualize data on structured meshes in python
+  description: "Python framework to visualize scientific data on structured meshes."
+  doc_url: 'https://viscid-hub.github.io/Viscid-docs/docs/master/index.html'
+  dev_url: 'https://github.com/viscid-hub/Viscid'
+
+extra:
+  recipe-maintainers: 'viscid-hub'
