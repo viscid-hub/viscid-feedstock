@@ -11,18 +11,30 @@ source:
   url: https://github.com/viscid-hub/Viscid/archive/{{ version }}.{{ file_ext }}
 
 build:
+  skip: True  # [not x86_64]
   number: 0
-  script: python setup.py install
+  script: python setup.py install  # [not (win and py27)]
+  script: python setup.py build & python setup.py build --compiler=mingw32 & python setup.py install  # [win and py27]
 
 requirements:
   build:
-    - {{ compiler('c') }}
+    - {{ compiler('c') }}  # [win]
+    - m2w64-gcc-fortran  # [win]
+    - clang_osx-64  # [osx]
+    - gfortran_osx-64  # [osx]
+    - gcc_linux-64  # [linux]
+    - gfortran_linux-64  # [linux]
+
   host:
     - python
-    - numpy >=1.9
+    - setuptools
+    - numpy =1.11  # [py27]
+    - numpy >=1.14,<2.0a0  # [not py27]
+
   run:
     - python
-    - {{ pin_compatible('numpy') }}
+    - numpy >=1.11,<2.0a0  # [py27]
+    - numpy >=1.14,<2.0a0  # [not py27]
     - ipython
     - matplotlib >=1.4
     - pyqt
