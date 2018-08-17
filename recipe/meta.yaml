@@ -1,5 +1,5 @@
 {% set name = "Viscid" %}
-{% set version = "0.99.8" %}
+{% set version = "0.99.9" %}
 {% set file_ext = "tar.gz" %}
 
 package:
