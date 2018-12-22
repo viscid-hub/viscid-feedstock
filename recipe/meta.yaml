@@ -12,7 +12,7 @@ source:
 
 build:
   skip: True  # [not x86_64]
-  number: 0
+  number: 1
   script: python setup.py install  # [not (win and py27)]
   script: python setup.py build & python setup.py build --compiler=mingw32 & python setup.py install  # [win and py27]
 
