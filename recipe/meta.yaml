@@ -1,5 +1,5 @@
 {% set name = "Viscid" %}
-{% set version = "1.0.0.dev9" %}
+{% set version = "1.0.0.dev10" %}
 {% set file_ext = "tar.gz" %}
 
 package:
@@ -12,7 +12,7 @@ source:
 
 build:
   skip: True  # [not x86_64]
-  number: 4
+  number: 0
   script: python setup.py install  # [not (win and py27)]
   script: python setup.py build & python setup.py build --compiler=mingw32 & python setup.py install  # [win and py27]
 
