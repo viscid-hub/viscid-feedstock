@@ -3,7 +3,7 @@ build_number_decrement:
 channel_sources:
 - defaults
 channel_targets:
-- viscid-hub main
+- viscid-hub dev
 docker_image:
 - condaforge/linux-anvil
 pin_run_as_build:
