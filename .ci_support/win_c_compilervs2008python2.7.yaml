@@ -1,7 +1,5 @@
 c_compiler:
 - vs2008
-build_number_decrement:
-- '0'
 channel_sources:
 - defaults
 channel_targets:

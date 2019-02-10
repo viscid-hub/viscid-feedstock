@@ -1,7 +1,5 @@
 c_compiler:
 - vs2015
-build_number_decrement:
-- '0'
 channel_sources:
 - defaults
 channel_targets:
