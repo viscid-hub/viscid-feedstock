@@ -1,3 +1,7 @@
+provider:
+  linux: circle
+  osx: travis
+  win: appveyor
 channels:
   targets:
   - [viscid-hub, dev]

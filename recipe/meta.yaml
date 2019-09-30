@@ -1,5 +1,5 @@
 {% set name = "Viscid" %}
-{% set version = "1.0.0.dev10" %}
+{% set version = "1.0.0.dev14" %}
 {% set file_ext = "tar.gz" %}
 
 package:
@@ -9,6 +9,7 @@ package:
 source:
   fn: '{{ name }}-{{ version }}.{{ file_ext }}'
   url: https://github.com/viscid-hub/Viscid/archive/{{ version }}.{{ file_ext }}
+  sha256: 55cf516c549124e3cf53b200a3813ad493756519cbd654db68707c08510f4eaa
 
 build:
   skip: True  # [not x86_64]
