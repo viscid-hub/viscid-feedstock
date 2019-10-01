@@ -1,0 +1,5 @@
+
+channel_sources:
+  - viscid-hub,defaults
+channel_targets:
+  - viscid-hub dev
