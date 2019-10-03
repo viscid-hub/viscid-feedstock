@@ -83,5 +83,6 @@ workflows:
   build_and_test:
     jobs:
       - build_linux_python2.7
+      - build_linux_python3.5
       - build_linux_python3.6
       - build_linux_python3.7
