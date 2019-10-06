@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 channel_sources:
 - defaults
 channel_targets:
-- viscid-hub dev
+- viscid-hub main
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:

@@ -1,7 +1,7 @@
 channel_sources:
 - defaults
 channel_targets:
-- viscid-hub dev
+- viscid-hub main
 docker_image:
 - condaforge/linux-anvil-comp7
 pin_run_as_build:
